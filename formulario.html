@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Formulario de Inscripción</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f4f6f9;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+min-height:100vh;
+margin:0;
+padding-top:40px;
+}
+
+.formulario{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+width:380px;
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-top:10px;
+font-weight:bold;
+}
+
+input, select{
+width:100%;
+padding:8px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:5px;
+box-sizing:border-box;
+}
+
+.hobbies{
+margin-top:8px;
+}
+
+.botones{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+}
+
+button{
+background:#6ec1ff;
+border:none;
+padding:10px;
+width:48%;
+border-radius:6px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#4aa9ee;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="formulario">
+
+<h2>Formulario de Inscripción</h2>
+
+<form>
+
+<label>Tipo de documento</label>
+<select required>
+<option value="">Seleccione</option>
+<option>Cédula</option>
+<option>Tarjeta de Identidad</option>
+<option>Pasaporte</option>
+</select>
+
+<label>Número de documento</label>
+<input type="text" pattern="[0-9]+" title="Solo números" required>
+
+<label>Nombres</label>
+<input type="text" minlength="3" maxlength="64" required>
+
+<label>Apellidos</label>
+<input type="text" minlength="3" maxlength="64" required>
+
+<label>Dirección</label>
+<input type="text" required>
+
+<label>Teléfono fijo</label>
+<input type="tel" pattern="[0-9]+" title="Solo números" required>
+
+<label>Teléfono celular</label>
+<input type="tel" pattern="[0-9]+" title="Solo números" required>
+
+<label>Correo electrónico</label>
+<input type="email" required>
+
+<label>Usuario</label>
+<input type="text" pattern="[A-Za-z]{3,14}[0-9]{0,2}" title="3 a 16 caracteres y máximo 2 números al final" required>
+
+<label>Password</label>
+<input type="password"
+pattern="(?=.*[A-Z])(?=(.*[a-z]){2,})(?=(.*[0-9]){5,})[A-Za-z0-9!?+\-/&$]{16}"
+title="Debe tener 16 caracteres, 1 mayúscula, 2 minúsculas, 5 números y símbolos !?-+/&$"
+required>
+
+<label>Fecha de inscripción</label>
+<input type="date" min="2026-02-15" max="2026-03-06" required>
+
+<label>Hobbies</label>
+
+<div class="hobbies">
+<input type="checkbox"> Deporte<br>
+<input type="checkbox"> Música<br>
+<input type="checkbox"> Lectura<br>
+<input type="checkbox"> Videojuegos
+</div>
+
+<div class="botones">
+<button type="submit">Enviar</button>
+<button type="reset">Limpiar</button>
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
